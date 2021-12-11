@@ -37,15 +37,15 @@ void setUp() throws IsClosedException, DoesNotExistException {
 public void addLineTest() throws IsClosedException, DoesNotExistException {
         String pID = "KEYBOARD";
         receipt.addLine(pID,10);
-        assertEquals(new BigDecimal("1800"),receipt.getTotal());
+        assertEquals(new BigDecimal("1800.00"),receipt.getTotal());
 }
 
 @Override
 @Test
 public void addTaxesTest() throws IsClosedException {
-        BigDecimal perc = new BigDecimal("15");
+        BigDecimal perc = new BigDecimal("15.00");
         receipt.addTaxes(perc);
-        assertEquals(new BigDecimal("345"),receipt.getTotal());
+        assertEquals(new BigDecimal("345.00"),receipt.getTotal());
 }
 
 @Override
@@ -53,11 +53,10 @@ public void addTaxesTest() throws IsClosedException {
 public void getIsClosedExceptionTest() {
         assertThrows(IsClosedException.class,
           () -> {
-            BigDecimal perc = new BigDecimal("15");
+            BigDecimal perc = new BigDecimal("15.00");
             receipt.addTaxes(perc);
             String pID = "CARD";
             receipt.addLine(pID,10);
-            //receipt.addTaxes(perc);
           });
         }
 

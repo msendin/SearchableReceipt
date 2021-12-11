@@ -19,7 +19,7 @@ class Receipt {
 
     Receipt() {
         listOfProducts = new ArrayList<>();
-        total = new BigDecimal("0");
+        total = new BigDecimal("0.00");
         isClosed = false;
     }
 
@@ -45,7 +45,7 @@ class Receipt {
         if (isClosed)
             throw new IsClosedException ("Recibo ya cerrado");
         else {
-            BigDecimal cent = new BigDecimal("100");
+            BigDecimal cent = new BigDecimal("100.00");
             total = total.add(total.multiply(percent).divide(cent,2, RoundingMode.CEILING));
             isClosed = true;
         }

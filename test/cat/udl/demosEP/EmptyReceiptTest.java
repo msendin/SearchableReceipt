@@ -29,15 +29,15 @@ class EmptyReceiptTest implements ReceiptInterfaceTest {
     public void addLineTest() throws IsClosedException, DoesNotExistException {
         String pID = "KEYBOARD";
         receipt.addLine(pID,10);
-        assertEquals(new BigDecimal("1500"),receipt.getTotal());
+        assertEquals(new BigDecimal("1500.00"),receipt.getTotal());
     }
 
     @Override
     @Test
     public void addTaxesTest() throws IsClosedException {
-        BigDecimal perc = new BigDecimal("15");
+        BigDecimal perc = new BigDecimal("15.00");
         receipt.addTaxes(perc);
-        assertEquals(new BigDecimal("0"),receipt.getTotal());
+        assertEquals(new BigDecimal("0.00"),receipt.getTotal());
     }
 
     @Override
@@ -45,7 +45,7 @@ class EmptyReceiptTest implements ReceiptInterfaceTest {
     public void getIsClosedExceptionTest() {
         assertThrows(IsClosedException.class,
                 () -> {
-                    BigDecimal perc = new BigDecimal("15");
+                    BigDecimal perc = new BigDecimal("15.00");
                     receipt.addTaxes(perc);
                     String pID = "KEYBOARD";
                     receipt.addLine(pID,10);
