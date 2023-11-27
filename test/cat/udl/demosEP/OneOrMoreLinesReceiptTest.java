@@ -21,7 +21,6 @@ class OneOrMoreLinesReceiptTest implements ReceiptInterfaceTest {
 @BeforeEach
 void setUp() throws IsClosedException, DoesNotExistException {
      String pID;
-
             receipt = new Receipt();
             prodDB = new StubProductDB();
             receipt.setProductDB(prodDB);
@@ -51,21 +50,20 @@ public void addTaxesTest() throws IsClosedException {
 @Override
 @Test
 public void getIsClosedExceptionTest() {
+        BigDecimal perc = new BigDecimal("15.00");
+        String pID = "CARD";
         assertThrows(IsClosedException.class,
-          () -> {
-            BigDecimal perc = new BigDecimal("15.00");
-            receipt.addTaxes(perc);
-            String pID = "CARD";
-            receipt.addLine(pID,10);
+          () -> {receipt.addTaxes(perc);
+                 receipt.addLine(pID,10);
           });
         }
 
 @Override
 @Test
 public void getDoesNotExistExceptionTest() {
+        String pID = "LAPTOP";
         assertThrows(DoesNotExistException.class,
           () -> {
-            String pID = "LAPTOP";
             receipt.addLine(pID,10);
           });
         }
