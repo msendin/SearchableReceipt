@@ -56,8 +56,6 @@ class EmptyReceiptTest implements ReceiptInterfaceTest {
     public void getDoesNotExistExceptionTest() {
         String pID = "LAPTOP";
         assertThrows(DoesNotExistException.class,
-                () -> {
-                    receipt.addLine(pID,10);
-                });
+                () -> receipt.addLine(pID,10));
     }
 }

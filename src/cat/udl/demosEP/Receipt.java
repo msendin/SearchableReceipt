@@ -2,7 +2,6 @@ package cat.udl.demosEP;
 
 import cat.udl.demosEP.exceptions.DoesNotExistException;
 import cat.udl.demosEP.exceptions.IsClosedException;
-import cat.udl.demosEP.mocks.StubProductDB;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
