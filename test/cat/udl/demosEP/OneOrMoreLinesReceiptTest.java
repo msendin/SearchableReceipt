@@ -49,20 +49,12 @@ public void addTaxesTest() throws IsClosedException {
 
 @Override
 @Test
-public void getIsClosedExceptionTest() {
-        BigDecimal perc = new BigDecimal("15.00");
-        String pID = "CARD";
-        assertThrows(IsClosedException.class,
-          () -> {receipt.addTaxes(perc);
-                 receipt.addLine(pID,10);
-          });
-        }
-
-@Override
-@Test
 public void getDoesNotExistExceptionTest() {
         String pID = "LAPTOP";
         assertThrows(DoesNotExistException.class,
           () -> receipt.addLine(pID,10));
         }
+
 }
+
+

@@ -8,7 +8,7 @@ import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
-class Receipt {
+public class Receipt {
 
     private final List<ReceiptLine> listOfProducts;
     private BigDecimal total;
@@ -16,13 +16,13 @@ class Receipt {
 
     private ProductDB prodDB;
 
-    Receipt() {
+    public Receipt() {
         listOfProducts = new ArrayList<>();
         total = new BigDecimal("0.00");
         isClosed = false;
     }
 
-    void setProductDB (ProductDB pDB) {
+    public void setProductDB(ProductDB pDB) {
         prodDB = pDB;
     }
 
