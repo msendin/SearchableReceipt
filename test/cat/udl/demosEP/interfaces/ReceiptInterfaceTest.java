@@ -1,10 +1,8 @@
 package cat.udl.demosEP.interfaces;
 
-import cat.udl.demosEP.ProductDB;
 import cat.udl.demosEP.Receipt;
 import cat.udl.demosEP.exceptions.DoesNotExistException;
 import cat.udl.demosEP.exceptions.IsClosedException;
-import cat.udl.demosEP.mocks.StubProductDB;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
